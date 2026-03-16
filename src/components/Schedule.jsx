@@ -169,7 +169,7 @@ export default function Schedule() {
                 )}
                 <td className="time-cell">{slot.time}</td>
                 {DAYS.map((_, dayIdx) => {
-                  const cell = schedule[slotIdx][dayIdx];
+                  const cell = schedule[slotIdx]?.[dayIdx] || { category: 'vazio', detail: '' };
                   const cat = CATEGORIES[cell.category] || CATEGORIES.vazio;
                   return (
                     <td
