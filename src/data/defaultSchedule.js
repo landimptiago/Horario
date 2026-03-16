@@ -39,6 +39,7 @@ export const TIME_SLOTS = [
 ];
 
 // schedule[slotIndex][dayIndex] = { category, detail }
+// Dias: [Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
 export const DEFAULT_SCHEDULE = [
   // 07:45
   [
@@ -46,16 +47,16 @@ export const DEFAULT_SCHEDULE = [
     { category: 'pediatria', detail: '' },
     { category: 'osler', detail: 'Revisão' },
     { category: 'pediatria', detail: '' },
-    { category: 'pediatria', detail: '' },
+    { category: 'osler', detail: 'Revisão' },
     { category: 'corrida', detail: '8:00' },
   ],
   // 08:35
   [
     { category: 'tecnica-cirurgica', detail: 'HUnovo 311' },
     { category: 'pediatria', detail: '' },
-    { category: 'osler', detail: 'Revisão' },
+    { category: 'negocios', detail: '' },
     { category: 'pediatria', detail: '' },
-    { category: 'pediatria', detail: '' },
+    { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'corrida', detail: '' },
   ],
   // 09:45
@@ -64,26 +65,26 @@ export const DEFAULT_SCHEDULE = [
     { category: 'pediatria', detail: '' },
     { category: 'negocios', detail: '' },
     { category: 'pediatria', detail: '' },
-    { category: 'pediatria', detail: '' },
     { category: 'negocios', detail: '' },
+    { category: 'osler', detail: 'Revisão' },
   ],
   // 10:35
   [
     { category: 'epidemiologia', detail: 'HUnovo 310' },
     { category: 'pediatria', detail: 'HUnovo 309' },
+    { category: 'bioetica', detail: 'HUnovo 408' },
+    { category: 'pediatria', detail: 'HUnovo 309' },
     { category: 'negocios', detail: '' },
-    { category: 'pediatria', detail: 'HUnovo 309' },
-    { category: 'pediatria', detail: 'HUnovo 309' },
     { category: 'negocios', detail: '' },
   ],
   // 11:25
   [
     { category: 'epidemiologia', detail: 'HUnovo 310' },
-    { category: 'estudo', detail: 'Pediatria' },
-    { category: 'estudo', detail: 'Bioética / Epid.' },
-    { category: 'estudo', detail: 'Pediatria' },
+    { category: 'osler', detail: 'Revisão' },
+    { category: 'bioetica', detail: 'HUnovo 408' },
+    { category: 'osler', detail: 'Revisão' },
     { category: 'estudo', detail: 'Genética' },
-    { category: 'livre', detail: '' },
+    { category: 'negocios', detail: '' },
   ],
   // 12:15 – Almoço
   [
@@ -116,7 +117,7 @@ export const DEFAULT_SCHEDULE = [
   [
     { category: 'genetica', detail: 'HUnovo 409' },
     { category: 'clinica-medica', detail: '' },
-    { category: 'osler', detail: 'Revisão' },
+    { category: 'estudo', detail: 'Bioética' },
     { category: 'clinica-medica', detail: '' },
     { category: 'clinica-medica', detail: '' },
     { category: 'livre', detail: '' },
@@ -125,7 +126,7 @@ export const DEFAULT_SCHEDULE = [
   [
     { category: 'genetica', detail: 'HUnovo 409' },
     { category: 'estudo', detail: 'Clínica Médica' },
-    { category: 'epidemiologia', detail: 'HUnovo 410' },
+    { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'estudo', detail: 'Téc. Cirúrgica' },
     { category: 'livre', detail: '' },
@@ -135,44 +136,44 @@ export const DEFAULT_SCHEDULE = [
     { category: 'osler', detail: 'Revisão' },
     { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'estudo', detail: 'Epidemiologia' },
-    { category: 'estudo', detail: 'Clínica Médica' },
+    { category: 'estudo', detail: 'Pediatria' },
     { category: 'osler', detail: 'Revisão' },
     { category: 'livre', detail: '' },
   ],
-  // 18:00
+  // 18:00 – Clínica Médica teórica Seg-Qui apenas
   [
-    { category: 'clinica-medica', detail: 'HUnovo 410' },
-    { category: 'negocios', detail: '' },
-    { category: 'clinica-medica', detail: 'HUnovo 410' },
-    { category: 'negocios', detail: '' },
-    { category: 'clinica-medica', detail: 'HUnovo 410' },
+    { category: 'clinica-medica', detail: 'Teórica · HUnovo 410' },
+    { category: 'clinica-medica', detail: 'Teórica · HUnovo 410' },
+    { category: 'clinica-medica', detail: 'Teórica · HUnovo 410' },
+    { category: 'clinica-medica', detail: 'Teórica · HUnovo 410' },
+    { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
   ],
   // 19:15
   [
     { category: 'liga', detail: 'LIC' },
     { category: 'liga', detail: 'LAME' },
-    { category: 'academia', detail: '' },
-    { category: 'academia', detail: '' },
-    { category: 'academia', detail: '' },
+    { category: 'negocios', detail: '' },
+    { category: 'negocios', detail: '' },
+    { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
   ],
-  // 20:15
+  // 20:15 – Academia ~20h
   [
     { category: 'liga', detail: 'LIC' },
     { category: 'liga', detail: 'LAME' },
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
-    { category: 'livre', detail: '' },
+    { category: 'academia', detail: '' },
   ],
   // 21:15
   [
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
-    { category: 'livre', detail: '' },
-    { category: 'livre', detail: '' },
-    { category: 'livre', detail: '' },
+    { category: 'academia', detail: '' },
+    { category: 'academia', detail: '' },
+    { category: 'academia', detail: '' },
     { category: 'livre', detail: '' },
   ],
   // 22:00
