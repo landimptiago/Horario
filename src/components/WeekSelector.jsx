@@ -1,8 +1,20 @@
 export default function WeekSelector({ currentWeek, onChange }) {
+  const parseLocal = (dateStr) => {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    return new Date(y, m - 1, d);
+  };
+
+  const toDateStr = (date) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  };
+
   const getWeekLabel = (dateStr) => {
-    const d = new Date(dateStr);
+    const d = parseLocal(dateStr);
     const endOfWeek = new Date(d);
-    endOfWeek.setDate(d.getDate() + 5);
+    endOfWeek.setDate(d.getDate() + 6);
 
     const fmt = (date) =>
       `${String(date.getDate()).padStart(2, '0')}/${String(date.getMonth() + 1).padStart(2, '0')}`;
@@ -11,9 +23,9 @@ export default function WeekSelector({ currentWeek, onChange }) {
   };
 
   const shiftWeek = (direction) => {
-    const d = new Date(currentWeek);
+    const d = parseLocal(currentWeek);
     d.setDate(d.getDate() + direction * 7);
-    onChange(d.toISOString().split('T')[0]);
+    onChange(toDateStr(d));
   };
 
   const goToThisWeek = () => {

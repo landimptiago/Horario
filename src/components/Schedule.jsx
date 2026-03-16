@@ -143,9 +143,9 @@ export default function Schedule() {
               {DAYS.map((day, i) => {
                 const isToday = (() => {
                   const today = new Date();
-                  const weekStart = new Date(currentWeek);
-                  const dayDate = new Date(weekStart);
-                  dayDate.setDate(weekStart.getDate() + i);
+                  const [y, m, d] = currentWeek.split('-').map(Number);
+                  const weekStart = new Date(y, m - 1, d);
+                  const dayDate = new Date(y, m - 1, d + i);
                   return today.toDateString() === dayDate.toDateString();
                 })();
                 return (
