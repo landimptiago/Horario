@@ -17,7 +17,7 @@ export const CATEGORIES = {
   'vazio': { label: '', color: 'transparent', textColor: '#555' },
 };
 
-export const DAYS = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+export const DAYS = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'];
 
 export const TIME_SLOTS = [
   { time: '07:45 – 08:35', period: 'manha' },
@@ -39,7 +39,7 @@ export const TIME_SLOTS = [
 ];
 
 // schedule[slotIndex][dayIndex] = { category, detail }
-// Dias: [Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+// Dias: [Segunda, Terça, Quarta, Quinta, Sexta, Sábado, Domingo]
 export const DEFAULT_SCHEDULE = [
   // 07:45
   [
@@ -49,6 +49,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'pediatria', detail: '' },
     { category: 'osler', detail: 'Revisão' },
     { category: 'corrida', detail: '8:00' },
+    { category: 'livre', detail: '' },
   ],
   // 08:35
   [
@@ -58,6 +59,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'pediatria', detail: '' },
     { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'corrida', detail: '' },
+    { category: 'livre', detail: '' },
   ],
   // 09:45
   [
@@ -67,6 +69,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'pediatria', detail: '' },
     { category: 'negocios', detail: '' },
     { category: 'osler', detail: 'Revisão' },
+    { category: 'estudo', detail: 'Revisão Semanal' },
   ],
   // 10:35
   [
@@ -75,7 +78,8 @@ export const DEFAULT_SCHEDULE = [
     { category: 'bioetica', detail: 'HUnovo 408' },
     { category: 'pediatria', detail: 'HUnovo 309' },
     { category: 'negocios', detail: '' },
-    { category: 'negocios', detail: '' },
+    { category: 'estudo', detail: 'Pediatria' },
+    { category: 'estudo', detail: 'Revisão Semanal' },
   ],
   // 11:25
   [
@@ -84,7 +88,8 @@ export const DEFAULT_SCHEDULE = [
     { category: 'bioetica', detail: 'HUnovo 408' },
     { category: 'osler', detail: 'Revisão' },
     { category: 'estudo', detail: 'Genética' },
-    { category: 'negocios', detail: '' },
+    { category: 'estudo', detail: 'Epidemiologia' },
+    { category: 'estudo', detail: 'Clínica Médica' },
   ],
   // 12:15 – Almoço
   [
@@ -93,7 +98,8 @@ export const DEFAULT_SCHEDULE = [
     { category: 'almoco', detail: 'Descanso' },
     { category: 'almoco', detail: 'Descanso' },
     { category: 'almoco', detail: 'Descanso' },
-    { category: 'livre', detail: '' },
+    { category: 'almoco', detail: 'Descanso' },
+    { category: 'almoco', detail: 'Descanso' },
   ],
   // 13:30
   [
@@ -102,7 +108,8 @@ export const DEFAULT_SCHEDULE = [
     { category: 'clinica-medica', detail: '' },
     { category: 'clinica-medica', detail: '' },
     { category: 'genetica', detail: 'HUnovo 401' },
-    { category: 'livre', detail: '' },
+    { category: 'estudo', detail: 'Genética' },
+    { category: 'estudo', detail: 'Pediatria' },
   ],
   // 14:20
   [
@@ -111,7 +118,8 @@ export const DEFAULT_SCHEDULE = [
     { category: 'clinica-medica', detail: '' },
     { category: 'clinica-medica', detail: '' },
     { category: 'genetica', detail: 'HUnovo 401' },
-    { category: 'livre', detail: '' },
+    { category: 'estudo', detail: 'Clínica Médica' },
+    { category: 'estudo', detail: 'Epidemiologia' },
   ],
   // 15:10
   [
@@ -120,7 +128,8 @@ export const DEFAULT_SCHEDULE = [
     { category: 'estudo', detail: 'Bioética' },
     { category: 'clinica-medica', detail: '' },
     { category: 'clinica-medica', detail: '' },
-    { category: 'livre', detail: '' },
+    { category: 'estudo', detail: 'Téc. Cirúrgica' },
+    { category: 'estudo', detail: 'Genética' },
   ],
   // 16:20
   [
@@ -129,6 +138,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'estudo', detail: 'Téc. Cirúrgica' },
+    { category: 'estudo', detail: 'Bioética' },
     { category: 'livre', detail: '' },
   ],
   // 17:10
@@ -137,6 +147,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'estudo', detail: 'Clínica Médica' },
     { category: 'estudo', detail: 'Epidemiologia' },
     { category: 'estudo', detail: 'Pediatria' },
+    { category: 'osler', detail: 'Revisão' },
     { category: 'osler', detail: 'Revisão' },
     { category: 'livre', detail: '' },
   ],
@@ -148,6 +159,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'clinica-medica', detail: 'Teórica · HUnovo 410' },
     { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
+    { category: 'livre', detail: '' },
   ],
   // 19:15
   [
@@ -155,6 +167,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'liga', detail: 'LAME' },
     { category: 'negocios', detail: '' },
     { category: 'negocios', detail: '' },
+    { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
   ],
@@ -166,6 +179,7 @@ export const DEFAULT_SCHEDULE = [
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
+    { category: 'livre', detail: '' },
   ],
   // 21:15
   [
@@ -175,11 +189,13 @@ export const DEFAULT_SCHEDULE = [
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
     { category: 'livre', detail: '' },
+    { category: 'livre', detail: '' },
   ],
   // 22:00
   [
     { category: 'academia', detail: '' },
     { category: 'academia', detail: '' },
+    { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
     { category: 'livre', detail: '' },
